@@ -1,0 +1,9 @@
+(function($){
+  $(".toggle-nav").click(function(){
+    if(!$(".large-screen-nav").hasClass("hide")){
+      $(".large-screen-nav").addClass("hide");
+    }else{
+      $(".large-screen-nav").removeClass("hide");
+    }
+  })
+})(jQuery);

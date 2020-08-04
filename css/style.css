@@ -1,0 +1,334 @@
+/*  Global Styles
+=======================*/
+@import url('fonts.css');
+html{
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+*, *::after, *::before{
+  box-sizing: inherit;
+}
+h2, h3{
+  font-family: 'Calligraffitti', cursive;
+}
+p{
+  color:#9c9a9a
+}
+.container{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px
+}
+/*  Selection Styles  */
+small::selection,
+p::selection, h1::selection,
+h2::selection, h3::selection,
+cite::selection, label::selection{
+  background-color: #76F7BF;
+  color:#FFF;
+}
+/*  Header Styles
+=======================*/
+header{
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../img/h2.jpg") no-repeat fixed center center/cover;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header h1{
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: 300;
+  font-size: 4em;
+  color:#76F7BF;
+}
+
+/*  Upper navigation Styles  */
+.large-screen-nav{
+  background-color: #000;
+  overflow: hidden;
+}
+.large-screen-nav ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.large-screen-nav a{
+  display: block;
+  padding: 10px;
+  color:#76F7BF;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color 1s ease .8s;
+}
+.large-screen-nav a:hover{
+  color:green;
+  background-color: #eeeeee47
+}
+@media(min-width:416px){
+    header .container{
+    display: none;
+  }
+}
+@media(max-width:415px){
+  .large-screen-nav{
+    display: none;
+  }
+}
+/*  Flex header */
+.wrap-all{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media(max-width:420px){
+  .flex-header{
+    display: none;
+  }
+}
+@media(min-width:421px){
+.flex-header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.flex-header .large-screen-nav{
+  flex: 1 0 calc(20%);
+  transition: flex .8s ease .5s, padding .8s ease 1s
+}
+.flex-header .switcher{
+  flex: 0 0 calc(3%);
+  padding: 30px
+}
+.flex-header .switcher a{
+  color:#76F7BF;
+  display: inline-block;
+  padding: 5px;
+  font-size: 1.3em;
+  animation: heart 2s ease infinite both alternate;
+}
+@keyframes heart {
+  0%{transform: scale(1);}
+  25%{transform: scale(2);}
+  50%{transform: scale(1);}
+  100%{transform: scale(3);}
+}
+.flex-header h1{
+  flex: 1 0 calc(60%);
+  padding-top: 200px;
+}
+.large-screen-nav h2{
+  color:#EEE;
+  transition: color 1s ease .8s;
+}
+.large-screen-nav.hide{
+  flex: 0 0 0;
+  padding: 0;
+  color:#000;
+  transition: flex .8s ease .5s, padding .8s ease 1s
+}
+.large-screen-nav.hide a{
+  color:#000;
+  transition: color 1s ease
+}
+.large-screen-nav.hide h2{
+  color:#000;
+  transition: color 1s ease;
+}
+}
+
+/*  Cards Styles
+=================================*/
+.card{
+  background-color: #F9F9F9;
+  max-width: 300px;
+  box-shadow: 4px 3px 10px #EEE;
+  transition: box-shadow .5s ease;
+  margin-right: 0;
+  margin-bottom: 2em
+}
+.card:hover{
+  box-shadow: 10px 8px 10px #EEE;
+}
+.card figure{
+  padding: 0;
+  margin: 0;
+}
+.card img{
+  width: 100%
+}
+.card h3, .card p{
+  padding: 0 25px;
+}
+.card h3{
+  font-size: 2em;
+  margin-bottom: 10px;
+  margin-top:20px
+}
+.card p{
+  padding-bottom: 25px;
+  margin-top: 10px
+}
+/*  Cards media Styles  */
+@media(min-width:35em){
+  .flex-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .card{
+    flex: 0 0 calc(50% - 1em)
+  }
+}
+@media(min-width:55em){
+  .flex-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .card{
+    flex: 0 0 calc(31% - 1em)
+  }
+}
+/*  Quote Styles
+================================*/
+.quote{
+  background-color: #F9F9F9;
+  text-align:center;
+}
+.quote p:after{
+  content: "\201D";
+  padding-left: 5px;
+  font-size: 2em;
+  color:#76F7BF;
+  font-family: "Times New Roman";
+}
+.quote p:before{
+  content: "\201C";
+  padding-right: 5px;
+  font-size: 2em;
+  color:#76F7BF;
+  font-family: "Times New Roman";
+}
+.quote cite{
+  color:#76F7BF;
+  font-weight: 300;
+}
+/*  Form Styles
+================================*/
+.forms{
+  margin-bottom: 5em
+}
+.forms h2{
+  margin-bottom: 2em;
+  font-size: 2em
+}
+form ul{
+  padding: 0;
+  margin:0;
+  list-style: none;
+}
+form li{
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+form label{
+  color:#9c9a9a;
+  min-width: 250px;
+  text-transform: capitalize;
+}
+form input{
+  background-color: #f9f9f9;
+  color:#60e0a9;
+  padding: 15px;
+  border: 0;
+  flex: 1 0 250px
+}
+form select{
+  background-color: #f9f9f9;
+  color:#60e0a9;
+  padding: 15px;
+  border: 0;
+  flex: 1 0 250px
+}
+textarea{
+  background-color: #f9f9f9;
+  color:#60e0a9;
+  padding: 15px;
+  border: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  flex: 3 0 250px;
+}
+button{
+  background-color: #60e0a9;
+  color:#FFF;
+  border: 1px solid #60e0a9;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all .5s ease;
+  padding: 15px;
+  flex: 1 0 90px;
+}
+button:hover{
+  background-color:#FFF;
+  color:#60e0a9;
+}
+/*  Map Styles
+================================*/
+.map iframe{
+  width: 100%;
+  height: 300px;
+}
+/*  Footer Styles
+================================*/
+footer{
+  background-color: #DCFFFD;
+  text-align: center;
+}
+footer a{
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #5FDD9D;
+  margin-left: 20px;
+  border-radius: 50%;
+  color: #5FDD9D;
+  transition: all .5s ease;
+}
+footer a:hover{
+  background-color: #5FDD9D;
+  border-color: #FFF;
+  color: #FFF;
+}
+/*  small-screen-nav Styles
+================================*/
+.small-screen-nav{
+  text-align: center;
+  text-transform: capitalize;
+}
+.small-screen-nav ul{
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+.small-screen-nav a{
+  display: block;
+  padding: 15px;
+  color:#76F7BF;
+  background-color: hsl(0,0%,15%);
+  text-decoration: none;
+  border-bottom: 1px solid #403e3e;
+  transition: all .5s ease;
+}
+.small-screen-nav a:hover{
+  background-color:  hsl(0,0%,15%, 0.9);
+}
+/*  Small-screen-nav Media Styles*/
+@media(min-width:420px){
+  .small-screen-nav{
+    display: none;
+  }
+}
